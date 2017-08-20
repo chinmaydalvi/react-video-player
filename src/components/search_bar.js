@@ -16,9 +16,20 @@ import React, { Component } from 'react';
 // By using class Based components
 
 class SearchBar extends Component{
+	constructor(props){
+			super(props);
+
+			this.state = { term: ''}
+	}
+
 	// render method is use to return JSX
 	render(){
-			return <input onChange={ (event) => console.log(event.target.value)}/>;
+			return (
+				<div>
+					<input onChange={ (event) => this.setState({ term: event.target.value })}/>
+					Input { this.state.term }
+				</div>
+			);
 	}
 }
 
