@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
  // ****************************Ways to return JSX**************************************
 
@@ -15,10 +15,10 @@ import React from 'react';
 
 // By using class Based components
 
-class SearchBar extends React.Component{
+class SearchBar extends Component{
 	// render method is use to return JSX
 	render(){
-			return <input/>;
+			return <input onChange={ (event) => console.log(event.target.value)}/>;
 	}
 }
 
