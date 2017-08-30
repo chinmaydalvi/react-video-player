@@ -1,4 +1,6 @@
 // NPM Modules
+
+import _ from 'lodash'
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
@@ -35,9 +37,12 @@ class App extends Component{
 	}
 
 	render(){
+
+		const videoSerach = _.debounce((term) => this.videoSerach(term), 300);
+
 		return (
 			<div>
-				<SearchBar onSearchTermChange={(term)=> this.videoSerach(term)}/>
+				<SearchBar onSearchTermChange={videoSerach}/>
 				<VideoDetail video={this.state.selectedVideo }/>
 				<VideoList onVideoSelect={ selectedVideo => this.setState({selectedVideo}) } videos={this.state.videos}/>
 			</div>
