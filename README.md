@@ -1,5 +1,5 @@
 Youtube Video Player Using Reactjs
-This Video Allow you
+This Video Player Allow you
 1. Search the Video.
 2. Display the List of Videos according to search text.
 3. Play any Video from the list.
