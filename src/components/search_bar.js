@@ -22,13 +22,18 @@ class SearchBar extends Component{
 			this.state = { term: ''}
 	}
 
+	onTextChange(text){
+		this.setState({ term: text })
+		this.props.onSearchTermChange(text)
+	}
+
 	// render method is use to return JSX
 	render(){
 			return (
 				<div>
 					<input 
 						value = { this.state.term }
-						onChange={ (event) => this.setState({ term: event.target.value })}
+						onChange={ (event) => this.onTextChange(event.target.value)}
 					/>
 					Input { this.state.term }
 				</div>
